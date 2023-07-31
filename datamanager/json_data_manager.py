@@ -18,3 +18,7 @@ class JSONDataManager(DataManagerInterface):
                 if key == user_id:
                     return user[f'{user_id}']['movies']
         # Return all the movies for a given user
+
+
+# list_users = JSONDataManager("users_data.json")
+# print(list_users.get_user_movies("2"))
