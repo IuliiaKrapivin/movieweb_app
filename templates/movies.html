@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title> User Movies - MovieWeb App </title>
+    </head>
+    <body>
+        <h1> Movies </h1>
+        <ul>
+            {% for movie in user %}
+                <li>
+                    <h2>{{ movie['name'] }}</h2>
+                    <p><em>Director: {{ movie['director'] }}</em></p>
+                    <p>Year: {{ movie['year'] }}</p>
+                    <p>Rating: {{ movie['rating'] }}</p>
+                    <form action="/users/{{ user_id }}/delete_movie/{{ movie['id'] }}">
+                    <input type="submit" value="Delete"></form>
+                    <form action="/users/{{ user_id }}/update_movie/{{ movie['id'] }}"> <br>
+                    <input type="submit" value="Update"></form>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="http://127.0.0.1:5000/users/{{ user_id }}/add_movie">To add a new movie</a>
+    </body>
+</html>

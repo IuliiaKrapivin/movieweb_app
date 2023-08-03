@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Add new movie</title>
+</head>
+<body>
+    <h1>Want add new movie?</h1>
+      <form method="POST" action="{{ url_for('add_movie', user_id=user_id) }}">
+      <label for="name">Movie name:</label><br>
+      <input type="text" id="name" name="name"><br>
+      <label for="director">Director:</label><br>
+      <input type="text" id="director" name="director"><br>
+      <label for="year">Year:</label><br>
+      <input type="text" id="year" name="year"><br>
+      <label for="rating">Rating:</label><br>
+      <input type="text" id="rating" name="rating"><br>
+      <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
