@@ -36,8 +36,8 @@ def add_movie(user_id):
         year = request.form.get('year')
         rating = request.form.get('rating')
         data_manager.add_movie(user_id, name, director, year, rating)
-        return redirect(url_for('list_user_movies'))
-    return render_template('add_movie.html')
+        return redirect(url_for('list_user_movies', user_id=user_id))
+    return render_template('add_movie.html', user_id=user_id)
 
 
 if __name__ == '__main__':
