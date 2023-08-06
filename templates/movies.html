@@ -22,7 +22,7 @@
                 </div>
             {% endfor %}
         </ul>
-        <a href="http://127.0.0.1:5000/users/{{ user_id }}/add_movie">To add a new movie</a>
-        <a href="http://127.0.0.1:5000/users">Go back to the main page</a>
+        <a href="{{ url_for('add_movie', user_id=user_id) }}">To add a new movie</a>
+        <a href="{{ url_for('list_users') }}">Go back to the main page</a>
     </body>
 </html>

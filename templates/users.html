@@ -12,12 +12,12 @@
             {% for user in users %}
                 {% for key, val in user.items() %}
                     <div class="user">
-                        <a href="http://127.0.0.1:5000/users/{{ key }}">{{ val['name'] }}</a>
+                        <a href="{{ url_for('list_user_movies', user_id=key) }}">{{ val.name }}</a>
                     </div>
                 {% endfor %}
             {% endfor %}
             </ul>
-        <a href="http://127.0.0.1:5000/add_user">To add a new user</a>
+        <a href="{{ url_for('add_user') }}">To add a new user</a>
     </body>
 </html>
 
