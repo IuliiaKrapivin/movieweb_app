@@ -1,12 +1,16 @@
 <html>
     <head>
         <title> User Movies - MovieWeb App </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+              crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
-        <h1> Movies </h1>
+        <h1 class="h1"> Movies </h1>
         <ul>
             {% for movie in user %}
-                <li>
+                <div class="movie">
                     <h2>{{ movie['name'] }}</h2>
                     <p><em>Director: {{ movie['director'] }}</em></p>
                     <p>Year: {{ movie['year'] }}</p>
@@ -15,9 +19,10 @@
                     <input type="submit" value="Delete"></form>
                     <form action="/users/{{ user_id }}/update_movie/{{ movie['id'] }}"> <br>
                     <input type="submit" value="Update"></form>
-                </li>
+                </div>
             {% endfor %}
         </ul>
         <a href="http://127.0.0.1:5000/users/{{ user_id }}/add_movie">To add a new movie</a>
+        <a href="http://127.0.0.1:5000/users">Go back to the main page</a>
     </body>
 </html>

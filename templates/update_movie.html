@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Update movie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+              crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Want update movie?</h1>
+      <form method="POST" action="{{ url_for('update_movie', user_id=user_id, movie_id=movie_id) }}">
+      <label for="name">Movie name:</label><br>
+      <input type="text" id="name" name="name" value="{{ movie.name }}"><br>
+      <label for="director">Director:</label><br>
+      <input type="text" id="director" name="director" value="{{ movie.director }}"><br>
+      <label for="year">Year:</label><br>
+      <input type="text" id="year" name="year" value="{{ movie.year }}"><br>
+      <label for="rating">Rating:</label><br>
+      <input type="text" id="rating" name="rating" value="{{ movie.rating }}"><br>
+      <input type="submit" value="Submit">
+    </form>
+    <a href="http://127.0.0.1:5000/users">Go back to the main page</a>
+</body>
+</html>
