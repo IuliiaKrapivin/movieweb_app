@@ -10,14 +10,14 @@
     <h1>Want update movie?</h1>
       <form method="POST" action="{{ url_for('update_movie', user_id=user_id, movie_id=movie_id) }}">
       <label for="name">Movie name:</label><br>
-      <input type="text" id="name" name="name" value="{{ movie.name }}"><br>
+      <input type="text" id="name" name="name" value="{{ movie.title }}"><br>
       <label for="director">Director:</label><br>
       <input type="text" id="director" name="director" value="{{ movie.director }}"><br>
       <label for="year">Year:</label><br>
       <input type="text" id="year" name="year" value="{{ movie.year }}"><br>
       <label for="rating">Rating:</label><br>
       <input type="text" id="rating" name="rating" value="{{ movie.rating }}"><br>
-      <input type="submit" value="Submit">
+      <input type="submit" value="Submit" style="margin-top:5px">
     </form>
     <a href="{{ url_for('list_users') }}">Go back to the main page</a>
 </body>

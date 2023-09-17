@@ -6,6 +6,8 @@ body {
 }
 
 .h1 {
+    margin: 10px;
+    margin-left: 25px;
     text-align: center;
     color: #4F4F4F;
 }
@@ -17,6 +19,7 @@ body {
     border: 1px solid #DDD;
     padding: 20px;
     margin-bottom: 20px;
+    margin-right: 25px;
     border-radius: 8px;
 }
 
@@ -25,7 +28,9 @@ body {
     background-color: #FFF;
     border: 1px solid #DDD;
     padding: 20px;
+    padding-bottom: 45px;
     margin-bottom: 20px;
     border-radius: 8px;
 }
+
 

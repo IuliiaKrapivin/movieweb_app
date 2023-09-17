@@ -10,11 +10,9 @@
         <h1 class="h1">Users</h1>
             <ul>
             {% for user in users %}
-                {% for key, val in user.items() %}
-                    <div class="user">
-                        <a href="{{ url_for('list_user_movies', user_id=key) }}">{{ val.name }}</a>
-                    </div>
-                {% endfor %}
+                <div class="user">
+                    <a href="{{ url_for('list_user_movies', user_id=user.0.user_id) }}">{{ user.0.user_name }}</a>
+                </div>
             {% endfor %}
             </ul>
         <a href="{{ url_for('add_user') }}">To add a new user</a>

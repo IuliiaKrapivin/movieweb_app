@@ -11,7 +11,7 @@
       <form method="POST" action="{{ url_for('add_movie', user_id=user_id) }}">
       <label for="name">Movie name:</label><br>
       <input type="text" id="name" name="name"><br>
-      <input type="submit" value="Submit">
+      <input type="submit" value="Submit" style="margin-top:5px">
     </form>
     <a href="{{ url_for('list_users') }}">Go back to the main page</a>
 </body>

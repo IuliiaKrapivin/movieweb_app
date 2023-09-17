@@ -9,16 +9,18 @@
     <body>
         <h1 class="h1"> Movies </h1>
         <ul>
-            {% for movie in user %}
+            {% for movie in movies %}
                 <div class="movie">
-                    <h2>{{ movie['name'] }}</h2>
-                    <p><em>Director: {{ movie['director'] }}</em></p>
-                    <p>Year: {{ movie['year'] }}</p>
-                    <p>Rating: {{ movie['rating'] }}</p>
-                    <form action="/users/{{ user_id }}/delete_movie/{{ movie['id'] }}">
-                    <input type="submit" value="Delete"></form>
-                    <form action="/users/{{ user_id }}/update_movie/{{ movie['id'] }}"> <br>
-                    <input type="submit" value="Update"></form>
+                    <h2>{{ movie.0.title }}</h2>
+                    <p><em>Director: {{ movie.0.director }}</em></p>
+                    <p>Year: {{ movie.0.year }}</p>
+                    <p>Rating: {{ movie.0.rating }}</p>
+                    <form action="/users/{{ user_id }}/delete_movie/{{ movie.0.movie_id }}">
+                    <input type="submit" value="Delete" style="float:left; margin-right:5px"></form>
+                    <form action="/users/{{ user_id }}/update_movie/{{ movie.0.movie_id }}">
+                    <input type="submit" value="Update" style="float:left; margin-right:5px"></form>
+                    <form action="/users/{{ user_id }}/movie_review/{{ movie.0.movie_id }}">
+                    <input type="submit" value="Review" style="float:left; margin-right:5px"></form>
                 </div>
             {% endfor %}
         </ul>

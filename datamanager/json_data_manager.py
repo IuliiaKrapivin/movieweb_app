@@ -73,6 +73,9 @@ class JSONDataManager(DataManagerInterface):
             year = data['Year']
             rating = float(data['Ratings'][0]['Value'][:-3])
             director = data['Director']
+            for movie in user_movies:
+                if name == movie['name'] and director == movie['director'] and year == movie['year']:
+                    return "Movie already exist"
             # creating a new movie record
             new_movie = {'id': movie_id, 'name': name, 'director': director, 'year': year, 'rating': rating}
             user_movies.append(new_movie)

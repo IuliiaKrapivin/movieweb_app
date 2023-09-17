@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Update movie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+              crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Want to leave review?</h1>
+      <form method="POST" action="{{ url_for('movie_review', user_id=user_id, movie_id=movie_id) }}">
+      <label for="rating">Rate movie (0 to 10):</label><br>
+      <input type="text" id="rating" name="rating"><br>
+      <label for="text">Write your review:</label><br>
+      <textarea id="text" name="text" rows="6" cols="33"></textarea><br>
+      <input type="submit" value="Submit" style="margin-top:5px">
+      </form>
+      {% if reviews %}
+        <h2>Your reviews:</h2>
+        {% for review in reviews %}
+            <div class="movie">
+                <p><em>Review: {{ review.0.review_text }}</em></p>
+                <p>Rating: {{ review.0.rating }}</p>
+            </div>
+        {% endfor %}
+      {% endif %}
+    <a href="{{ url_for('list_users') }}">Go back to the main page</a>
+</body>
+</html>
